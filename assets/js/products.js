@@ -14,7 +14,7 @@ function displayProducts (products) {
                     <h3>${element.name}</h3>
                     <p>$${element.price}</p>
                     <button class="btn btn-primary">Editar</button>
-                    <button class="btn btn-secondary">borrar</button>
+                    <button class="btn btn-secondary" onclick="deleteProductClick(${element.id})">Borrar</button>
                 </div>
             </div>
         </div>`;
@@ -54,7 +54,7 @@ function saveProductClick() {
     }; 
 
     saveProduct(product);
-    
+
     console.log('saving product');
     console.debug(product);
 }
@@ -71,6 +71,13 @@ function cancelProductClick() {
     hide ('product-form');
     show ('action-buttons');
     show ('products-container');
+}
+
+function deleteProductClick (productId) {
+    axios.delete(`${baseUrl}/products/${productId}`)
+        .then(function (response) {
+            loadProducts();
+        });
 }
 
 loadProducts();
