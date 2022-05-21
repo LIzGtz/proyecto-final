@@ -43,15 +43,15 @@
                         <input id="productPrice" type="number" class="form-control">
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary">Guardar</button>
-                <button type="reset" class="btn btn-secondary">Reset</button>
+                <button type="button" class="btn btn-primary" onclick="saveProductClick()">Guardar</button>
+                <button type="reset" class="btn btn-secondary" onclick="cancelProductClick()">Cancelar</button>
             </form>
         </div>
-        <div class="row">
+        <div class="row" id="action-buttons">
             <!-- Here goes the products -->
             <div class="d-flex flex-row-reverse">
                 <div class="p-2">
-                    <button type="button" class="btn btn-primary">Nuevo</button>
+                    <button type="button" class="btn btn-primary" onclick="newProductClick()">Nuevo</button>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
                         <h3>Sudadera 1</h3>
                         <p>$50</p>
                         <button class="btn btn-primary">Editar</button>
-                        <button class="btn btn-secondary">borrar</button>
+                        <button class="btn btn-secondary">Borrar</button>
                     </div>
                 </div>
             </div>
@@ -87,6 +87,7 @@
     </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/js/utilerias.js"></script>
     <script src="assets/js/products.js"></script>
 </body>
 

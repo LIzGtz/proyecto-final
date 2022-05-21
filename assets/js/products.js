@@ -31,4 +31,46 @@ function loadProducts () {
         });
 }
 
+function saveProduct (product) {
+    axios.post(`${baseUrl}/products`, product)
+        .then(function (response) {
+            loadProducts();
+
+            hide ('product-form');
+            show ('action-buttons');
+            show ('products-container');
+        });
+}
+
+function saveProductClick() {
+    const productName = document.getElementById('productName').value;
+    const productImage = document.getElementById('productImage').value;
+    const productPrice = document.getElementById('productPrice').value;
+
+    const product = {
+        name: productName,
+        image: productImage,
+        price: productPrice 
+    }; 
+
+    saveProduct(product);
+    
+    console.log('saving product');
+    console.debug(product);
+}
+
+function newProductClick() {
+    show ('product-form');
+    hide ('action-buttons');
+    hide ('products-container');
+
+    console.log("new product...");
+}
+
+function cancelProductClick() {
+    hide ('product-form');
+    show ('action-buttons');
+    show ('products-container');
+}
+
 loadProducts();
