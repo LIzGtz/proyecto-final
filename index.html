@@ -47,18 +47,20 @@
                 <button type="reset" class="btn btn-secondary">Reset</button>
             </form>
         </div>
-        <div class="row" id="products-container">
+        <div class="row">
             <!-- Here goes the products -->
             <div class="d-flex flex-row-reverse">
                 <div class="p-2">
                     <button type="button" class="btn btn-primary">Nuevo</button>
                 </div>
             </div>
+        </div>
+        <div class="row" id="products-container">
             <div class="col-3">
                 <div class="card">
                     <img src="assets/img/ejemplo-sudadera-1.webp" class="card-img-top">
                     <div class="card-body">
-                        <h3>Sudadera 1</h3> 
+                        <h3>Sudadera 1</h3>
                         <p>$50</p>
                         <button class="btn btn-primary">Editar</button>
                         <button class="btn btn-secondary">borrar</button>
@@ -69,7 +71,7 @@
                 <div class="card">
                     <img src="assets/img/ejemplo-sudadera-2.webp" class="card-img-top">
                     <div class="card-body">
-                        <h3>Sudadera 2</h3> 
+                        <h3>Sudadera 2</h3>
                     </div>
                 </div>
             </div>
@@ -84,6 +86,8 @@
         </div>
     </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/js/products.js"></script>
 </body>
 
 </html>
